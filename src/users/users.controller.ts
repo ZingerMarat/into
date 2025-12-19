@@ -16,7 +16,7 @@ export class UsersController {
   constructor(private readonly UsersService: UsersService) {}
 
   @Get()
-  getAllUsers(): CreateUserDTO[] {
+  getAllUsers() {
     return this.UsersService.getAllUsers();
   }
 
@@ -28,12 +28,12 @@ export class UsersController {
 
   // // users/1
   @Get(':id')
-  getUserById(@Param('id') id: string): CreateUserDTO {
+  getUserById(@Param('id') id: string) {
     return this.UsersService.getUserById(Number(id));
   }
 
   @Post()
-  createUser(@Body() body: CreateUserDTO): CreateUserDTO {
+  createUser(@Body() body: CreateUserDTO) {
     return this.UsersService.createUser(body);
   }
 
